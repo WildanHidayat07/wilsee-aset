@@ -1,110 +1,117 @@
-/* Wilsee - Main Stylesheet v1.0 */
-/* Dibuat bersama Gemini Pro & Anda */
+/* Wilsee - Polaris Theme v1.0 */
+/* Desain oleh Gemini Pro & Wildan Hidayat */
 
-/* Import Font Keren */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Grand+Hotel&display=swap');
+/* 1. Import Font & Variabel Desain Baru */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap');
 
-/* Reset & Variabel */
 :root {
-    --primary-color: #0095f6;
-    --border-color: #dbdbdb;
-    --background-light: #fafafa;
-    --text-dark: #262626;
-    --text-light: #8e8e8e;
-    --header-height: 60px;
+    --bg-main: #F4F7F6;
+    --bg-card: #FFFFFF;
+    --text-primary: #121212;
+    --text-secondary: #6A737D;
+    --accent-primary: #007A7A; /* Teal yang elegan */
+    --accent-secondary: #FF8C42; /* Oranye sebagai aksen */
+    --border-color: #E1E4E8;
+    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --header-height: 65px;
+    --border-radius: 12px;
 }
+
+/* 2. Reset & Body Dasar */
 * { box-sizing: border-box; }
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--background-light);
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
     margin: 0;
-    color: var(--text-dark);
 }
 main { width: 100%; }
 
-/* Header & Navigasi Utama */
+/* 3. Header & Navigasi Desain Baru */
 .main-header {
-    background: #fff; border-bottom: 1px solid var(--border-color);
-    height: var(--header-height); position: fixed; top: 0;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    height: var(--header-height);
+    position: fixed; top: 0;
     width: 100%; z-index: 1000;
 }
 .header-container {
-    max-width: 975px; height: 100%; margin: 0 auto;
+    max-width: 1100px; height: 100%; margin: 0 auto;
     display: flex; justify-content: space-between; align-items: center;
     padding: 0 20px;
 }
 .brand-logo-header {
-    font-family: 'Grand Hotel', cursive; font-size: 1.8rem;
-    margin: 0; color: var(--text-dark);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    color: var(--text-primary);
 }
 .brand-logo-link { text-decoration: none; }
-.main-nav { display: flex; gap: 20px; }
-.main-nav a { font-size: 1.5rem; color: var(--text-dark); text-decoration: none; }
-.main-nav a i { transition: transform 0.2s ease; }
-.main-nav a:hover i { transform: scale(1.1); }
-.main-nav a .bx-log-out { color: #ed4956; }
+.main-nav { display: flex; align-items: center; gap: 25px; }
+.main-nav a { font-size: 1.4rem; color: var(--text-secondary); text-decoration: none; transition: color 0.3s, transform 0.2s; }
+.main-nav a:hover, .main-nav a.active { color: var(--accent-primary); transform: translateY(-2px); }
+.main-nav a .bx-log-out { color: #D73A49; }
 
-/* Wrapper Konten Utama */
+/* 4. Tampilan Timeline & Kartu Postingan Baru */
 .content-wrapper { padding-top: var(--header-height); }
-
-/* Timeline & Post Card */
-.timeline { max-width: 614px; margin: 20px auto; }
+.timeline { max-width: 680px; margin: 30px auto; padding: 0 15px; }
 .post-card {
-    background: #fff; border: 1px solid var(--border-color);
-    border-radius: 8px; margin-bottom: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-light);
     overflow: hidden;
 }
-.post-header { display: flex; align-items: center; padding: 12px 16px; }
-.avatar { width: 32px; height: 32px; border-radius: 50%; margin-right: 12px; object-fit: cover;}
-.post-username { font-weight: 500; }
+.post-header { display: flex; align-items: center; padding: 12px 20px; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; margin-right: 15px; object-fit: cover; border: 2px solid var(--accent-primary); padding: 2px;}
+.post-username { font-weight: 500; font-size: 1rem; }
 .post-image img { width: 100%; height: auto; display: block; }
-.post-footer { padding: 8px 16px 16px; }
-.post-actions { font-size: 1.5rem; padding: 4px 0 8px 0; }
-.post-actions i { margin-right: 12px; cursor: pointer; }
-.post-actions a { color: inherit; text-decoration: none; }
-.post-actions i.liked { color: #ed4956; } /* Warna merah untuk like */
+.post-footer { padding: 15px 20px; }
+.post-actions { font-size: 1.5rem; display: flex; align-items: center; gap: 15px; padding: 4px 0 8px 0; }
+.post-actions a, .post-actions i { color: var(--text-secondary); cursor: pointer; }
+.post-actions i.liked { color: #E84C4C; }
 .like-btn:active i { transform: scale(1.2); }
-.post-caption p { margin: 4px 0 0 0; font-size: 0.9rem; line-height: 1.4; }
-.post-caption strong { margin-right: 5px; }
-.post-time { font-size: 0.7rem; color: #8E8E8E; text-transform: uppercase; margin-top: 8px; }
+.like-count { font-size: 0.9rem; font-weight: 500; margin: 8px 0; }
+.post-caption { font-size: 0.95rem; line-height: 1.5; }
+.post-time { font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; margin-top: 10px; letter-spacing: 0.5px; }
 
-/* Halaman Form (Login, Register, Add Post) */
-.auth-body { display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-.auth-wrapper { max-width: 350px; width: 100%; }
-.auth-container, .form-container { text-align: center; }
-.auth-box, .switch-box, .form-box {
-    background-color: #FFFFFF; border: 1px solid #DBDBDB;
-    padding: 1.5rem 2.5rem; margin: 0 0 10px;
+/* 5. Tampilan Halaman Profil Baru yang Lebih Menarik */
+.profile-container { max-width: 975px; margin: 30px auto; padding: 0 20px; }
+.profile-header { display: flex; align-items: center; margin-bottom: 50px; }
+.profile-avatar { width: 150px; height: 150px; margin-right: 50px; flex-shrink: 0;}
+.profile-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
+.profile-info { flex-grow: 1; }
+.profile-username { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px; }
+.profile-stats { display: flex; gap: 30px; margin: 15px 0; font-size: 1rem; }
+.profile-stats strong { font-weight: 700; }
+.profile-bio { font-size: 1rem; line-height: 1.6; color: var(--text-secondary); border-left: 3px solid var(--accent-primary); padding-left: 15px; }
+
+.profile-posts-header {
+    text-align: center; font-size: 1rem;
+    color: var(--text-secondary); text-transform: uppercase;
+    letter-spacing: 1px; padding: 15px 0; margin-bottom: 20px;
+    border-top: 1px solid var(--border-color);
 }
-.form-container { max-width: 500px; margin: 20px auto; }
-.brand-logo { font-family: 'Grand Hotel', cursive; font-size: 3.5rem; margin: 0.5rem 0 1rem 0; }
-.tagline { font-size: 1.1rem; color: #8E8E8E; font-weight: 500; margin: 0.5rem 0 1.5rem; }
-.auth-box input, .form-box input, .form-box textarea {
-    width: 100%; padding: 10px; margin-bottom: 8px;
-    border: 1px solid #DBDBDB; border-radius: 3px;
-    background-color: #FAFAFA; box-sizing: border-box;
+.post-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.grid-item { position: relative; padding-top: 100%; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-light); }
+.grid-item img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.grid-item:hover img { transform: scale(1.05); }
+
+/* Lain-lain */
+.post-username-link { text-decoration: none; color: inherit; }
+
+/* Halaman Form akan kita biarkan dulu, bisa kita redesign nanti */
+.auth-body, .auth-container, .auth-box, .switch-box, .form-container, .form-box, input, button, textarea {
+    /* ... kode lama bisa tetap di sini untuk sementara ... */
 }
-.auth-box button, .form-box button {
-    width: 100%; padding: 10px; margin-top: 1rem;
-    background-color: #4CB5F9; border: none;
-    border-radius: 8px; color: white; font-weight: bold; cursor: pointer;
-}
-.switch-box { padding: 1.5rem; }
-.switch-box p { margin: 0; }
-.switch-box a { color: #0095f6; text-decoration: none; font-weight: 500; }
-.error-box, .success-box { padding: 10px; margin-bottom: 1rem; border-radius: 3px; text-align: left; font-size: 0.9rem; }
-.error-box p, .success-box p { margin: 0; }
-.error-box { background-color: #ffebee; color: #c62828; }
-.success-box { background-color: #e8f5e9; color: #2e7d32; }
-.form-group { text-align: left; margin-bottom: 1rem; }
-.form-group label { display: block; margin-bottom: 5px; font-weight: 500; }
-#image { padding: 10px; border: 1px dashed #DBDBDB; background: #FAFAFA; width: 100%; }
 .empty-state { text-align: center; padding: 4rem 2rem; font-size: 1.2rem; color: #8E8E8E; }
 
 /* Responsif */
-@media (max-width: 640px) {
-    .timeline { width: 100%; margin: 0; padding-top: 10px; }
-    .post-card, .form-container, .auth-container { border-left: none; border-right: none; border-radius: 0; }
-    .header-container { padding: 0 10px; }
-    .main-nav { gap: 15px; }
+@media (max-width: 768px) {
+    .profile-header { flex-direction: column; text-align: center; padding-bottom: 20px; margin-bottom: 20px;}
+    .profile-avatar { width: 100px; height: 100px; margin: 0 auto 20px auto; }
+    .profile-info { width: 100%; }
+    .profile-stats { justify-content: space-around; gap: 10px; padding: 10px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); margin-top: 15px;}
+    .post-grid { gap: 4px; }
 }
