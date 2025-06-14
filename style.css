@@ -27,7 +27,9 @@ body {
 }
 main { width: 100%; }
 
-/* 3. Header & Navigasi Desain Baru */
+/* Sisanya adalah kode CSS Polaris yang lengkap... */
+/* (Sama seperti yang saya berikan sebelumnya) */
+
 .main-header {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
@@ -51,8 +53,6 @@ main { width: 100%; }
 .main-nav a { font-size: 1.4rem; color: var(--text-secondary); text-decoration: none; transition: color 0.3s, transform 0.2s; }
 .main-nav a:hover, .main-nav a.active { color: var(--accent-primary); transform: translateY(-2px); }
 .main-nav a .bx-log-out { color: #D73A49; }
-
-/* 4. Tampilan Timeline & Kartu Postingan Baru */
 .content-wrapper { padding-top: var(--header-height); }
 .timeline { max-width: 680px; margin: 30px auto; padding: 0 15px; }
 .post-card {
@@ -75,8 +75,6 @@ main { width: 100%; }
 .like-count { font-size: 0.9rem; font-weight: 500; margin: 8px 0; }
 .post-caption { font-size: 0.95rem; line-height: 1.5; }
 .post-time { font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; margin-top: 10px; letter-spacing: 0.5px; }
-
-/* 5. Tampilan Halaman Profil Baru yang Lebih Menarik */
 .profile-container { max-width: 975px; margin: 30px auto; padding: 0 20px; }
 .profile-header { display: flex; align-items: center; margin-bottom: 50px; }
 .profile-avatar { width: 150px; height: 150px; margin-right: 50px; flex-shrink: 0;}
@@ -86,7 +84,6 @@ main { width: 100%; }
 .profile-stats { display: flex; gap: 30px; margin: 15px 0; font-size: 1rem; }
 .profile-stats strong { font-weight: 700; }
 .profile-bio { font-size: 1rem; line-height: 1.6; color: var(--text-secondary); border-left: 3px solid var(--accent-primary); padding-left: 15px; }
-
 .profile-posts-header {
     text-align: center; font-size: 1rem;
     color: var(--text-secondary); text-transform: uppercase;
@@ -97,17 +94,9 @@ main { width: 100%; }
 .grid-item { position: relative; padding-top: 100%; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-light); }
 .grid-item img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
 .grid-item:hover img { transform: scale(1.05); }
-
-/* Lain-lain */
 .post-username-link { text-decoration: none; color: inherit; }
-
-/* Halaman Form akan kita biarkan dulu, bisa kita redesign nanti */
-.auth-body, .auth-container, .auth-box, .switch-box, .form-container, .form-box, input, button, textarea {
-    /* ... kode lama bisa tetap di sini untuk sementara ... */
-}
 .empty-state { text-align: center; padding: 4rem 2rem; font-size: 1.2rem; color: #8E8E8E; }
 
-/* Responsif */
 @media (max-width: 768px) {
     .profile-header { flex-direction: column; text-align: center; padding-bottom: 20px; margin-bottom: 20px;}
     .profile-avatar { width: 100px; height: 100px; margin: 0 auto 20px auto; }
