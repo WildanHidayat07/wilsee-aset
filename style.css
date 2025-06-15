@@ -27,8 +27,7 @@ body {
 }
 main { width: 100%; }
 
-/* Sisanya adalah kode CSS Polaris yang lengkap... */
-/* (Sama seperti yang saya berikan sebelumnya) */
+/* ... (Kode yang sudah ada tetap sama) ... */
 
 .main-header {
     background: rgba(255, 255, 255, 0.8);
@@ -80,7 +79,7 @@ main { width: 100%; }
 .profile-avatar { width: 150px; height: 150px; margin-right: 50px; flex-shrink: 0;}
 .profile-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
 .profile-info { flex-grow: 1; }
-.profile-username { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px; }
+.profile-username { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
 .profile-stats { display: flex; gap: 30px; margin: 15px 0; font-size: 1rem; }
 .profile-stats strong { font-weight: 700; }
 .profile-bio { font-size: 1rem; line-height: 1.6; color: var(--text-secondary); border-left: 3px solid var(--accent-primary); padding-left: 15px; }
@@ -97,6 +96,43 @@ main { width: 100%; }
 .post-username-link { text-decoration: none; color: inherit; }
 .empty-state { text-align: center; padding: 4rem 2rem; font-size: 1.2rem; color: #8E8E8E; }
 
+/* --- STYLE BARU UNTUK TOMBOL AKSI PROFIL --- */
+.profile-title { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; margin-bottom: 15px;}
+.btn { 
+    padding: 8px 24px; 
+    border-radius: 8px; 
+    font-weight: 500; 
+    cursor: pointer; 
+    border: 1px solid transparent; 
+    font-size: 0.9rem;
+    transition: all 0.2s ease-in-out;
+}
+.btn.edit-profile { 
+    background-color: transparent; 
+    border-color: var(--border-color); 
+}
+.btn.edit-profile:hover {
+    background-color: var(--bg-main);
+}
+.btn.follow { 
+    background-color: var(--accent-primary); 
+    color: white; 
+}
+.btn.follow:hover {
+    opacity: 0.9;
+}
+.btn.unfollow { 
+    background-color: var(--bg-card); 
+    color: var(--text-primary); 
+    border-color: var(--border-color); 
+}
+.btn.unfollow:hover {
+    background-color: #f77;
+    color: white;
+    border-color: #f77;
+}
+
+/* --- (Bagian lain tetap sama) --- */
 @media (max-width: 768px) {
     .profile-header { flex-direction: column; text-align: center; padding-bottom: 20px; margin-bottom: 20px;}
     .profile-avatar { width: 100px; height: 100px; margin: 0 auto 20px auto; }
