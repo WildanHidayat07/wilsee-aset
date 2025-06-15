@@ -66,10 +66,25 @@ main { width: 100%; }
 .post-username { font-weight: 500; font-size: 1rem; }
 .post-image img { width: 100%; height: auto; display: block; }
 .post-footer { padding: 15px 20px; }
+
+/* PERBAIKAN DI BAGIAN INI */
 .post-actions { font-size: 1.5rem; display: flex; align-items: center; gap: 15px; padding: 4px 0 8px 0; }
-.post-actions a, .post-actions i { color: var(--text-secondary); cursor: pointer; }
+.post-actions a, .post-actions i { 
+    color: var(--text-secondary); 
+    cursor: pointer; 
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Memberi jarak antara ikon dan angka */
+}
+.action-count {
+    font-size: 0.9rem; /* Ukuran font untuk angka */
+    font-weight: 500;
+    color: var(--text-secondary);
+}
 .post-actions i.liked { color: #E84C4C; }
 .like-btn:active i { transform: scale(1.2); }
+/* AKHIR PERBAIKAN */
+
 .like-count { font-size: 0.9rem; font-weight: 500; margin: 8px 0; }
 .post-caption { font-size: 0.95rem; line-height: 1.5; margin-bottom: 10px; }
 .post-time { font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; margin-top: 10px; letter-spacing: 0.5px; }
@@ -78,6 +93,7 @@ main { width: 100%; }
 .profile-avatar { width: 150px; height: 150px; margin-right: 50px; flex-shrink: 0;}
 .profile-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
 .profile-info { flex-grow: 1; }
+.profile-title { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; margin-bottom: 15px;}
 .profile-username { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
 .profile-stats { display: flex; gap: 30px; margin: 15px 0; font-size: 1rem; }
 .profile-stats strong { font-weight: 700; }
@@ -110,8 +126,6 @@ main { width: 100%; }
 .btn.follow:hover { opacity: 0.9; }
 .btn.unfollow { background-color: var(--bg-card); color: var(--text-primary); border-color: var(--border-color); }
 .btn.unfollow:hover { background-color: #f77; color: white; border-color: #f77; }
-
-/* --- STYLE BARU UNTUK BAGIAN KOMENTAR --- */
 .comment-section { 
     margin-top: 12px;
     padding-top: 12px;
