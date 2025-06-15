@@ -1,5 +1,5 @@
 // File: /assets/js/app.js
-// Pusat kendali JavaScript untuk semua interaksi di Wilsee v2.0
+// Pusat kendali JavaScript untuk semua interaksi di Wilsee v2.1
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (likeButton) {
             const postId = likeButton.dataset.postId;
             const icon = likeButton.querySelector('i');
-            // PERBAIKAN: Targetkan span spesifik untuk angka like
             const likeCountSpan = document.querySelector(`.like-count-number[data-post-id="${postId}"]`);
 
             fetch('/api/like_handler.php', {
@@ -30,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         icon.classList.remove('bxs-heart', 'liked');
                         icon.classList.add('bx-heart');
                     }
-                    // PERBAIKAN: Update jumlah like secara real-time
+                    // Update jumlah like secara real-time
                     if (likeCountSpan && data.new_like_count !== undefined) {
                         likeCountSpan.textContent = data.new_like_count;
                     }
@@ -129,18 +128,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // =======================================================
-    // FITUR BARU: Menangani Show/Hide Bagian Komentar
+    // Fitur 4: Menangani Show/Hide Bagian Komentar
     // =======================================================
     document.body.addEventListener('click', function(event) {
-        // Cari ikon komentar yang bisa di-toggle
         const commentIcon = event.target.closest('.comment-icon-toggle');
         if (commentIcon) {
             event.preventDefault();
             const postId = commentIcon.dataset.postId;
-            // Cari bagian komentar yang sesuai dengan post ID
             const commentSection = document.querySelector(`.comment-section[data-post-id="${postId}"]`);
             if (commentSection) {
-                // Toggle class 'show' untuk menampilkan/menyembunyikan
                 commentSection.classList.toggle('show');
             }
         }
