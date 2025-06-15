@@ -1,5 +1,5 @@
 // File: /assets/js/app.js
-// Pusat kendali JavaScript untuk semua interaksi di Wilsee v2.1
+// Pusat kendali JavaScript untuk semua interaksi di Wilsee v2.2
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (likeButton) {
             const postId = likeButton.dataset.postId;
             const icon = likeButton.querySelector('i');
+            // PERBAIKAN: Targetkan span spesifik untuk angka like
             const likeCountSpan = document.querySelector(`.like-count-number[data-post-id="${postId}"]`);
 
             fetch('/api/like_handler.php', {
